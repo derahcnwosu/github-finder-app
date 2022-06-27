@@ -32,8 +32,8 @@ function UserSearch() {
   return (
     <div className='user-search'>
         <motion.h1 className='lead-txt' 
-            initial = {{opacity: 0.1, fontSize: '1rem'}}
-            animate = {{opacity: 1, fontSize: '4rem'}}
+            initial = {{opacity: 0.05}}
+            animate = {{opacity: 1}}
             transition = {{delay: 0.5, duration: 2}}
         >Search github users</motion.h1>
         <motion.div className="input-group" 
