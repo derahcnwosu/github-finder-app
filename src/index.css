@@ -1,0 +1,212 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto Mono', monospace;
+}
+:root{
+    --primary-color: #333;
+    --tertiary-color: #e5e5e5;
+}
+
+
+/* UTILITIES */
+.lead-txt{
+    font-size: 4rem;
+    color: #333;
+}
+
+
+.App{
+    display: grid;
+    grid-template-areas: 
+        'navbar navbar navbar'
+        'main main main'
+        'footer footer footer'
+    ;
+    height: 100vh;
+    grid-template-rows: 40px 1fr 50px;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    grid-area: navbar;
+    background: var(--primary-color);
+}
+.logo{
+    color: #fff;
+    text-decoration: none;
+    display: inline-block;
+    margin: 0.5rem 1rem;
+}
+
+.navbar ul{
+    display: flex;
+    list-style: none;
+    margin-right: 4rem;
+}
+.nav-link{
+    text-decoration: none;
+    color: #fff;
+    display: inline-block;
+    padding: 0.8rem 1rem;
+}
+.nav-link:hover{
+    background-color: #fff;
+    color: var(--primary-color);
+}
+
+
+
+
+
+
+
+.main{
+    grid-area: main;
+    background: var(--tertiary-color);
+}
+.user-search{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5rem;
+}
+.input-group{
+    position: relative;
+    margin-top: 1rem;
+}
+
+.find-input{
+    padding: 1rem 1rem;
+    width: 600px;
+    outline: none;
+    border: none;
+}
+.btn{
+    position: relative;
+    right: 4.6rem;
+    padding: 0.5rem;
+    background: var(--primary-color);
+    color: #fff;
+    cursor: pointer;
+    border: 1px solid var(--primary-color);
+}
+.user-list{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 3rem 0;
+    gap: 1rem;
+}
+.user-item{
+    display: flex;
+    position: relative;
+    gap: 4rem;
+    background: var(--primary-color);
+    color: #fff;
+    padding: 1rem;
+}
+.user-search-image{
+    border-radius: 50%;
+}
+.user-search-name{
+    color: skyblue;
+    position: relative;
+    top: 1rem;
+}
+.spinner{
+    margin: 1rem 0;
+}
+
+
+
+
+.user-page{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3rem;
+}
+.user-img{
+    border-radius: 50%;
+}
+.user-img:hover{
+    opacity: 0.8;
+}
+
+
+.repo-head{
+    margin-top: 1rem;
+}
+.repo-list{
+    margin-top: 0.5rem;
+}
+.repo-item{
+    margin-top: 1rem;
+    background: var(--primary-color);
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+    padding: 1rem;
+    color: #fff;
+    width: 700px;
+}
+.repo-item p{
+    margin-top: 0.4rem;
+    font-size: 0.8rem;
+}
+.repo-link{
+    color: skyblue;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: footer;
+    background: var(--primary-color);
+    color: #fff;
+}
+
+
+
+
+
+
+
+
+
+@media (max-width: 600px) {
+    .lead-txt{
+        font-size: 2rem;
+    }
+
+    .find-input{
+        width: 300px;
+    }
+    .user-list{
+        grid-template-columns: 1fr;
+    }
+    .repo-item{
+        width: 400px;
+    }
+}
