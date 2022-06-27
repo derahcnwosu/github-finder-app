@@ -33,6 +33,7 @@ function User() {
             initial = {{opacity: 0}}
             animate = {{opacity: 1}}
             transition = {{delay: 1, type: 'spring', stiffness: 300}}
+            className = 'user-page-name'
         >
          {user.login}
         </motion.h3>

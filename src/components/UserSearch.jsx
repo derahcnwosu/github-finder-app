@@ -3,8 +3,10 @@ import {searchUsers} from '../actions/githubActions'
 import githubContext from '../context/githubContext'
 import UserList from './UserList'
 import Spinner from '../assets/Spinner'
+import {motion} from 'framer-motion'
 
 function UserSearch() {
+
     const {dispatch, loading} = useContext(githubContext)
     const [text, setText] = useState('')
 
@@ -29,13 +31,20 @@ function UserSearch() {
 
   return (
     <div className='user-search'>
-        <h1 className='lead-txt'>Search github users</h1>
-        <div className="input-group">
+        <motion.h1 className='lead-txt' 
+            initial = {{opacity: 0.1, fontSize: '1rem'}}
+            animate = {{opacity: 1, fontSize: '4rem'}}
+            transition = {{delay: 0.5, duration: 2}}
+        >Search github users</motion.h1>
+        <motion.div className="input-group" 
+            initial = {{opacity: 0.1}}
+            animate = {{opacity: 1}}
+            transition = {{delay: 0.5, duration: 1}}
+        >
             <input type="text" className="find-input" value={text} onChange = {(e) => setText(e.target.value)}/>
             <button className="btn" onClick={submit}>Search</button>
-        </div>
+        </motion.div>
         {loading ? <Spinner /> : <UserList />}
-        
     </div>
   )
 }

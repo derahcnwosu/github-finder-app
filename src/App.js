@@ -13,7 +13,7 @@ function App() {
       <GithubProvider>
         <Router>
           <Navbar />
-          <div className="main">
+          <div className="main bg-light">
             <Routes>
               <Route path="/" element = {<UserSearch />}/>
               <Route path="/user/:login" element = {<User />}/>
