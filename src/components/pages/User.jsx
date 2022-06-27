@@ -19,10 +19,6 @@ function User() {
         })
         }
 
-        
-
-
-
         getUserAndReposData()
     }, [dispatch, params.login])
   return (

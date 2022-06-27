@@ -3,9 +3,12 @@ import axios from "axios"
 const github = axios.create({
     baseURL: 'https://api.github.com',
     headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'Authorization': process.env.REACT_APP_GITHUB_TOKEN
     }
 })
+
+
 
 
 export const searchUsers = async(user) => {
