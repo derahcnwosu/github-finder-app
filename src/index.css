@@ -220,6 +220,13 @@
 
 
 @media (max-width: 600px) {
+    .navbar ul{
+        margin-right: 2rem;
+    }
+    .logo{
+        margin: 1rem 0;
+        margin-left: 1rem;
+    }
     .lead-txt{
         font-size: 2rem;
     }
@@ -231,6 +238,9 @@
         grid-template-columns: 1fr;
     }
     .repo-item{
-        width: 400px;
+        width: 300px;
+    }
+    .repo-head{
+        font-size: 1.2rem;
     }
 }
