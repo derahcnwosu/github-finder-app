@@ -4,7 +4,6 @@ import githubContext from '../context/githubContext'
 import UserList from './UserList'
 import Spinner from '../assets/Spinner'
 import {motion} from 'framer-motion'
-
 function UserSearch() {
 
     const {dispatch, loading} = useContext(githubContext)
