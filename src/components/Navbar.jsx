@@ -9,8 +9,6 @@ function Navbar() {
   const [menuIcon, setMenuIcon] = useState(<FaBars />)
 
   const changeMenu = () => {
-    document.querySelectorAll('.times').forEach((one) => one.style.transform = 'rotate(360deg)')
-    document.querySelectorAll('.menu').forEach((one) => one.style.transform = 'rotate(-360deg)')
     setMenuIcon(<FaTimes/>)
   }
 
