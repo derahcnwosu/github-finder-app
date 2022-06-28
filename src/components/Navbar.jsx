@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import {Link} from 'react-router-dom'
-import {FaGithub} from 'react-icons/fa'
+import {FaGithub, FaBars, FaSun, FaMoon} from 'react-icons/fa'
 
 function Navbar() {
   const [isDark, setIsDark] = useState(false)
@@ -24,6 +24,7 @@ document.querySelectorAll('.repo-item').forEach((one) => one.style.background = 
 document.querySelectorAll('.repo-link').forEach((one) => one.style.color = '#e5e5e5')
 document.querySelectorAll('.user-page-name').forEach((one) => one.style.color = '#fff')
 document.querySelectorAll('.repo-head').forEach((one) => one.style.color = '#fff')
+document.querySelectorAll('.theme-toggle').forEach((one) => one.style.transform = 'rotate(360deg)')
 }
   const lightMode = () => {
 document.querySelectorAll('.primary').forEach((one) => one.style.background = '#152238')
@@ -37,6 +38,8 @@ document.querySelectorAll('.user-search-name').forEach((one) => one.style.color 
 document.querySelectorAll('.repo-item').forEach((one) => one.style.background = '#152238')
 document.querySelectorAll('.user-page-name').forEach((one) => one.style.color = '#333')
 document.querySelectorAll('.repo-head').forEach((one) => one.style.color = '#333')
+document.querySelectorAll('.theme-toggle').forEach((one) => one.style.transform = 'rotate(-360deg)')
+
 
 
 
@@ -49,7 +52,8 @@ document.querySelectorAll('.repo-head').forEach((one) => one.style.color = '#333
         <ul>
             <li><Link to= '/' className='nav-link primary'>Home</Link></li>
             <li><Link to= '/about' className='nav-link primary'>About</Link></li>
-            <li><button className="check" onClick={checkMode}>Switch Theme</button></li>
+            <li><button className="theme-toggle" onClick={checkMode}>{isDark ? <FaSun color='skyblue'/> : <FaMoon color='skyblue'/>}</button></li>
+            <li><FaBars className='hamburger'/></li>
         </ul>
     </div>
   )

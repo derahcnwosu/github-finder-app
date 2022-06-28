@@ -35,16 +35,18 @@
 }
 .bg-light{
     background: var(--bg-light);
+    transition: all 1s ease-in-out;
 }
-.check{
-    background: skyblue;
-    padding: 0.2rem;
-    border-radius: 8px;
+.theme-toggle{
+    background: none;
     border: none;
-    color: #fff;
-    display: inline-block;
+    font-size: 1.3rem;
     margin-top: 0.8rem;
+    transition: all 0.7s ease-in-out;
 }
+/* .theme-toggle:focus{
+    transform: rotate(360deg);
+} */
 
 
 .App{
@@ -61,6 +63,7 @@
 .navbar{
     display: flex;
     justify-content: space-between;
+    align-items: center;
     grid-area: navbar;
 }
 .logo{
@@ -89,6 +92,14 @@
 .cas{
     color: #234681;
 }
+.hamburger{
+    display: none;
+    font-size: 1.3rem;
+    margin-top: 1rem;
+    margin-left: 1rem;
+    cursor: pointer;
+    color: skyblue;
+}
 
 
 
@@ -116,13 +127,20 @@
     border: none;
 }
 .btn{
-    position: relative;
-    right: 4.6rem;
+    /* position: relative;
+    right: 4.6rem; */
     padding: 0.5rem;
-    background: var(--primary-color);
-    color: #fff;
+    background: var(--tertiary-color);
+    color: var(--primary-color);
+    margin-top: 1rem;
     cursor: pointer;
-    border: 1px solid var(--primary-color);
+    border: none;
+    outline: none;
+    transition: all 0.5s ease-in-out;
+}
+.btn:hover{
+    transform: scale(0.9);
+    border: none;
 }
 .user-list{
     display: grid;
@@ -223,8 +241,9 @@
     .navbar{
         font-size: 0.9rem;
     }
-    .navbar ul{
-        margin-right: 2rem;
+    .navbar ul .nav-link{
+        /* margin-right: 5rem; */
+        display: none;
     }
     .logo{
         margin: 1rem 0;
@@ -249,5 +268,8 @@
     }
     .repo-head{
         font-size: 1.2rem;
+    }
+    .hamburger{
+        display: block;
     }
 }

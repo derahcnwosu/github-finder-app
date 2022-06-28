@@ -42,8 +42,8 @@ function UserSearch() {
             transition = {{delay: 0.5, duration: 1}}
         >
             <input type="text" className="find-input" value={text} onChange = {(e) => setText(e.target.value)}/>
-            <button className="btn" onClick={submit}>Search</button>
         </motion.div>
+            <button className="btn" onClick={submit}>Search</button>
         {loading ? <Spinner /> : <UserList />}
     </div>
   )
