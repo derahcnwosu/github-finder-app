@@ -1,10 +1,18 @@
 import React, {useState} from 'react'
 import {Link} from 'react-router-dom'
-import {FaGithub, FaBars, FaSun, FaMoon} from 'react-icons/fa'
+import {FaGithub, FaBars, FaSun, FaMoon, FaTimes} from 'react-icons/fa'
 
 function Navbar() {
   const [isDark, setIsDark] = useState(false)
   const [isMenu, setIsMenu] = useState(true)
+  const [isMenuIcon, setIsMenuIcon] = useState(true)
+  const [menuIcon, setMenuIcon] = useState(<FaBars />)
+
+  const changeMenu = () => {
+    document.querySelectorAll('.times').forEach((one) => one.style.transform = 'rotate(360deg)')
+    document.querySelectorAll('.menu').forEach((one) => one.style.transform = 'rotate(-360deg)')
+    setMenuIcon(<FaTimes/>)
+  }
 
   const checkMode = (e) => {
     setIsDark(!isDark)
@@ -12,11 +20,23 @@ function Navbar() {
     e.preventDefault()
   }
   const checkMenu = (e) => {
+    setIsMenuIcon(!isMenuIcon)
     setIsMenu(!isMenu)
     isMenu ? menuOn() : menuOff()
+    isMenuIcon ? putMenuOn(): putMenuOff()
     e.preventDefault()
   }
 
+  const putMenuOn = () => {
+    changeMenu()
+    document.querySelectorAll('.hamburger').forEach((one) => one.style.transform = 'rotate(360deg)')
+  }
+  const putMenuOff = () => {
+    setMenuIcon(<FaBars />)
+    document.querySelectorAll('.hamburger').forEach((one) => one.style.transform = 'rotate(-360deg)')
+  }
+
+ 
   const darkMode = () => {
 // document.querySelectorAll('.primary').forEach((one) => one.style.background = '#fff')
 // document.querySelectorAll('.primary').forEach((one) => one.style.color = '#152238')
@@ -73,7 +93,7 @@ const menuOff = () => {
             <li><Link to= '/' className='nav-link primary'>Home</Link></li>
             <li><Link to= '/about' className='nav-link primary'>About</Link></li>
             <li><button className="theme-toggle" onClick={checkMode}>{isDark ? <FaSun color='skyblue'/> : <FaMoon color='skyblue'/>}</button></li>
-            <li><FaBars className='hamburger' onClick={checkMenu}/></li>
+            <li className='hamburger' onClick={checkMenu}>{menuIcon}</li>
         </ul>
     </div>
   )
