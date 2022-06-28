@@ -130,8 +130,8 @@
     /* position: relative;
     right: 4.6rem; */
     padding: 0.5rem;
-    background: var(--tertiary-color);
-    color: var(--primary-color);
+    background: var(--primary-color);
+    color: var(--tertiary-color);
     margin-top: 1rem;
     cursor: pointer;
     border: none;
