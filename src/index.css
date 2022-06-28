@@ -66,6 +66,9 @@
     justify-content: space-between;
     align-items: center;
     grid-area: navbar;
+    position: sticky;
+    top: 0;
+    z-index: 1;
 }
 .logo{
     color: #fff;
@@ -320,5 +323,12 @@
     }
     .times{
         display: block;
+    }
+}
+
+@media (max-width: 500px) {
+    .lead-txt,
+    .tertiary-txt{
+        margin-left: 3rem;
     }
 }
